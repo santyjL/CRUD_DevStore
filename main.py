@@ -2,6 +2,8 @@ import flet as ft
 
 
 def main(page: ft.Page):
-    pass
+    page.title = "Inicio"
+    page.bgcolor = ft.Colors.YELLOW
+
 
 ft.app(main)
