@@ -1,8 +1,12 @@
 import flet as ft
 
+from styles import Colores
+
 
 def main(page: ft.Page):
-    # Primera fila con fondo rojo
+    page.title = "Inicio"
+    page.bgcolor = Colores.BLANCO.value
+
     first_row = ft.Container(
         content=ft.Row(
             controls=[
