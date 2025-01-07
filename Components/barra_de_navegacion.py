@@ -3,6 +3,13 @@ import flet as ft
 from styles import Colores
 
 
+def item_de_barra(label, icon):
+    return ft.NavigationDrawerDestination(
+        label=label,
+        icon=ft.Icon(name=icon, color=Colores.BLANCO.value),
+        selected_icon=True,
+    )
+
 def barra_de_navegación(page: ft.Page):
     def handle_dismissal(e):
         page.add(ft.text("Drawer dismissed"))
@@ -13,24 +20,11 @@ def barra_de_navegación(page: ft.Page):
 
     Barra = ft.NavigationDrawer(
         controls=[
-            ft.NavigationDrawerDestination(
-                label="Inicio",
-                icon=ft.Icon(name=ft.Icons.HOME, color=Colores.BLANCO.value),
-                selected_icon=True,
-            ),
-            ft.NavigationDrawerDestination(
-                label="Buscar",
-                icon="store",
-            ),
-            ft.NavigationDrawerDestination(
-                label="Contacto",
-                icon="contact_support",
-            ),
-            ft.NavigationDrawerDestination(
-                label="Acerca de",
-                icon="info",
-            )
+            item_de_barra("Inicio", "home"),
+            item_de_barra("Buscar", "store"),
+            item_de_barra("Contacto", "contact_support"),
+            item_de_barra("Acerca de", "info"),
         ],
-
+        bgcolor=Colores.AZUL.value,
     )
     return Barra
