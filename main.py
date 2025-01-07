@@ -1,5 +1,6 @@
 import flet as ft
 
+from Components.barra_de_navegacion import barra_de_navegación
 from styles import Colores
 
 
@@ -69,7 +70,10 @@ def main(page: ft.Page):
         height=400
     )
 
+    barra = barra_de_navegación(page)
+
     page.add(
+        ft.ElevatedButton("Show drawer", on_click=lambda e: page.open(barra)),
         lo_mas_nuevo,
         ft.Container(height=5),
         Destacado,
