@@ -5,35 +5,32 @@ from styles import Colores
 
 def barra_de_navegación(page: ft.Page):
     def handle_dismissal(e):
-        page.add(ft.Text("Drawer dismissed"))
+        page.add(ft.text("Drawer dismissed"))
 
     def handle_change(e):
-        page.add(ft.Text(f"Selected Index changed: {e.control.selected_index}"))
+        page.add(ft.text(f"Selected Index changed: {e.control.selected_index}"))
         # page.close(drawer)
 
     Barra = ft.NavigationDrawer(
         controls=[
-            ft.NavigationDrawerItem(
-                text="Inicio",
-                icon="home",
-                selected=True,
-                on_click=handle_dismissal
+            ft.NavigationDrawerDestination(
+                label="Inicio",
+                icon=ft.Icon(name=ft.Icons.HOME, color=Colores.BLANCO.value),
+                selected_icon=True,
             ),
-            ft.NavigationDrawerItem(
-                text="Productos",
+            ft.NavigationDrawerDestination(
+                label="Buscar",
                 icon="store",
-                on_click=handle_dismissal
             ),
-            ft.NavigationDrawerItem(
-                text="Contacto",
+            ft.NavigationDrawerDestination(
+                label="Contacto",
                 icon="contact_support",
-                on_click=handle_dismissal
             ),
-            ft.NavigationDrawerItem(
-                text="Acerca de",
+            ft.NavigationDrawerDestination(
+                label="Acerca de",
                 icon="info",
-                on_click=handle_dismissal
             )
         ],
-        on_change=handle_change
+
     )
+    return Barra
