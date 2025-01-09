@@ -1,85 +1,78 @@
 import flet as ft
 
-from Components.barra_de_navegacion import barra_de_navegación
-from styles import Colores
+from Components.barra_de_navegacion import barra_de_navegacion
+from Components.contenedor_productos import contenedor_de_productos
+from styles import Colores, Estilos
 
 
-def create_product_container(title, image_src, description, bgcolor):
-    return ft.Container(
-        content=ft.Column(
-            controls=[
-                ft.Text(title, size=20, weight=ft.FontWeight.BOLD),
-                ft.Image(src=image_src, width=150, height=150),
-                ft.Text(description, size=14)
-            ],
-            alignment=ft.MainAxisAlignment.CENTER,
-            horizontal_alignment=ft.CrossAxisAlignment.CENTER
-        ),
-        bgcolor=bgcolor,
-        width=None,
-        height=200,
-        alignment=ft.alignment.center,
-        padding=10,
-        margin=5,
-        border_radius=ft.border_radius.all(10),
-    )
-
+# Función principal
 def main(page: ft.Page):
+    # Configuración de la página
     page.title = "Inicio"
     page.bgcolor = Colores.BLANCO.value
-    page.scroll = True
-    page.adaptive = True
+    page.scroll = "auto"
 
+    # Barra de navegación
+    barra = barra_de_navegacion(page)
+    page.drawer = barra  # `barra` es el AnimatedSwitcher que contiene el NavigationDrawer
+
+    # Sección "Lo más nuevo"
     lo_mas_nuevo = ft.Column(
         controls=[
-            create_product_container("Nuevo Producto",
-                                     "https://via.placeholder.com/auto",
-                                     "Descripción del producto", Colores.ROJO.value)
+            contenedor_de_productos(
+                "Nuevo Producto",
+                "https://via.placeholder.com/150",
+                "Descripción del producto",
+                Colores.ROJO.value,
+                width="full", height=400,
+            )
         ],
         horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-        height=800
     )
-
-    Destacado = ft.Row(
+    lo_mas_destacado = ft.Row(
         controls=[
-            create_product_container("Producto Destacado",
-                                     "https://via.placeholder.com/150",
-                                     "Descripción del producto", Colores.AZUL.value)
-            for _ in range(2)
+            contenedor_de_productos(
+                "Producto Destacado",
+                "https://via.placeholder.com/150",
+                "Descripción del producto",
+                Colores.AZUL.value,
+                width="full", height=300,
+                expand= 1
+            )for _ in range(2)
+
         ],
-        height=400,
-        alignment=ft.MainAxisAlignment.CENTER
+        alignment=ft.CrossAxisAlignment.CENTER,
+    )
+    otros =ft.Column(
+        controls=[
+            ft.Container(
+                ft.Row(
+                    controls=[
+                        contenedor_de_productos(
+                            f"producto {_ + 1}",
+                            "https://via.placeholder.com/150",
+                            "Descripción del producto",
+                            Colores.BLANCO.value,
+                            width="full", height=200,
+                            expand=2
+                        )for _ in range(5)
+                    ],
+                    alignment=ft.CrossAxisAlignment.CENTER,
+                ),
+                margin= Estilos.Margin.value,
+                bgcolor=Colores.GRIS.value,
+            )for _ in range(3)
+        ],
     )
 
-    productos = ft.Container(
-        content=ft.Row(
-            controls=[
-                create_product_container("Producto",
-                                         "https://via.placeholder.com/150",
-                                         "Descripción del producto",
-                                         Colores.BLANCO.value)
-                for _ in range(5)
-            ],
-            spacing=10,
-            alignment=ft.MainAxisAlignment.CENTER
-        ),
-        bgcolor=Colores.GRIS.value,
-        padding=10,
-        border_radius=ft.border_radius.all(10),
-        width=None,
-        height=400
-    )
+    # Añadir la sección "Lo más nuevo" a la página
+    page.controls.append(lo_mas_nuevo)
+    page.controls.append(lo_mas_destacado)
+    page.controls.append(otros)
 
-    barra = barra_de_navegación(page)
+    # Mostrar la barra de navegación
+    page.drawer.open = True
 
-    page.add(
-        ft.ElevatedButton("Show drawer", on_click=lambda e: page.open(barra)),
-        lo_mas_nuevo,
-        ft.Container(height=5),
-        Destacado,
-        ft.Container(height=5),
-        productos
-    )
+    page.update()
 
-if __name__ == "__main__":
-    ft.app(target=main)
+ft.app(target=main)
