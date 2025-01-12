@@ -1,6 +1,7 @@
 import flet as ft
 
-from Components.barra_de_navegacion import barra_de_navegacion
+from Components.barra_de_navegacion import (barra_comprimida,
+                                            barra_de_navegacion)
 from Components.contenedor_productos import contenedor_de_productos
 from styles import Colores, Estilos
 
@@ -13,8 +14,9 @@ def main(page: ft.Page):
     page.scroll = "auto"
 
     # Barra de navegación
-    barra = barra_de_navegacion(page)
+    barra: ft.NavigationDrawer = barra_de_navegacion(page)
     page.drawer = barra  # `barra` es el AnimatedSwitcher que contiene el NavigationDrawer
+    page.drawer.open = False  # La barra de navegación estará cerrada por defecto
 
     # Sección "Lo más nuevo"
     lo_mas_nuevo = ft.Column(
@@ -25,6 +27,7 @@ def main(page: ft.Page):
                 "Descripción del producto",
                 Colores.ROJO.value,
                 width="full", height=400,
+                expand= 1
             )
         ],
         horizontal_alignment=ft.CrossAxisAlignment.CENTER,
@@ -66,13 +69,10 @@ def main(page: ft.Page):
     )
 
     # Añadir la sección "Lo más nuevo" a la página
+    page.controls.append(barra_comprimida(page.drawer))
     page.controls.append(lo_mas_nuevo)
     page.controls.append(lo_mas_destacado)
     page.controls.append(otros)
-
-    # Mostrar la barra de navegación
-    page.drawer.open = True
-
     page.update()
 
 ft.app(target=main)
