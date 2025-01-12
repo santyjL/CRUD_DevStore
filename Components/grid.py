@@ -8,9 +8,7 @@ from styles import Estilos
 def crear_grid(contenedores : list[Creador_de_productos]) -> ft.GridView:
     """
     Crear un GridView dinámico que muestra una cantidad específica de elementos.
-
-    :param cantidad_elementos: Número de componentes a agregar al GridView.
-    :return: Un GridView configurado con los elementos especificados.
+    :param contenedores: Lista de contenedores de productos
     """
 
     productos = []
