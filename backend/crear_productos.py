@@ -15,8 +15,10 @@ class Creador_de_productos:
     width: str
     height: int
     expand: int
+    color_texto: str = Colores.NEGRO.value
 
     def elementos_retorno(self):
         return (self.nombre, self.imagen,
                 self.descripcion, self.color,
-                self.width, self.height, self.expand)
+                self.width, self.height, self.expand,
+                self.color_texto)
