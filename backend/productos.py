@@ -119,7 +119,7 @@ camara_deportiva = Creador_de_productos(
 
 productos_varios = [
     libro_python, arduino_kit,
-    monitor_gaming, laptop_dell,
+    monitor_gaming,
     teclado_mecanico, teclado_ergonomico,
     auriculares_inalambricos, headset_gaming,
     raton_gaming, raton_inalambrico,
