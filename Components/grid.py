@@ -15,15 +15,19 @@ def crear_grid(contenedores : list[Creador_de_productos]) -> ft.GridView:
 
 
     for contenedor in contenedores:  # Crear tantos elementos como se especifique
-        nombre, imagen, descripcion, color, width, height, expand = contenedor.elementos_retorno()
+        (nombre, imagen, descripcion,
+         color, width, height, expand,
+         color_texto) = contenedor.elementos_retorno()
+
         elemento = contenedor_de_productos(
-                nombre,               # Nombre dinámico del producto
-                imagen,  # Imagen de ejemplo
-                descripcion,        # Descripción estática del producto
-                color,                # Color de fondo
-                width,                      # Ancho del producto
+                nombre,                 # Nombre dinámico del producto
+                imagen,                 # Imagen de ejemplo
+                descripcion,            # Descripción estática del producto
+                color,                  # Color de fondo
+                width,                  # Ancho del producto
                 height,
-                expand                  # Altura del producto
+                expand,                  # Altura del producto
+                color_texto
             )
 
         productos.append(elemento)
