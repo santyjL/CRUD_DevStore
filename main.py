@@ -1,6 +1,6 @@
 import flet as ft
 
-from backend.productos import productos_varios
+from backend.productos import productos_destacado, productos_varios
 from Components.barra_de_navegacion import (barra_comprimida,
                                             barra_de_navegacion)
 from Components.contenedor_productos import contenedor_de_productos
@@ -37,14 +37,7 @@ def main(page: ft.Page):
 
     lo_mas_destacado = ft.Row(
         controls=[
-            contenedor_de_productos(
-                "Producto Destacado",
-                "https://via.placeholder.com/150",
-                "Descripción del producto",
-                Colores.AZUL.value,
-                width="full", height=300,
-                expand= 1
-            )for _ in range(2)
+            crear_grid(productos_destacado, max_extent=700)
 
         ],
         alignment=ft.CrossAxisAlignment.CENTER,
@@ -55,7 +48,7 @@ def main(page: ft.Page):
             ft.Container(
                 ft.Row(
                     controls=[
-                        crear_grid(productos_varios)
+                        crear_grid(productos_varios, max_extent=300)
                     ],
                     alignment=ft.CrossAxisAlignment.CENTER,
                 ),
