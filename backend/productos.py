@@ -6,10 +6,11 @@ libro_python = Creador_de_productos(
     nombre="Python Crash Course",
     imagen="asset/Python Crash Course.jpg",
     descripcion="Un libro completo para principiantes en Python.",
-    color=Colores.BLANCO.value,
+    color=Colores.AZUL.value,
     width="full",
-    height=200,
-    expand=1
+    height=300,
+    expand=1,
+    color_texto=Colores.BLANCO.value
 )
 
 arduino_kit = Creador_de_productos(
@@ -38,10 +39,11 @@ teclado_mecanico = Creador_de_productos(
     nombre="Logitech G Pro X",
     imagen="asset/Logitech G Pro X.jpg",
     descripcion="Teclado mecánico personalizable para gamers.",
-    color=Colores.BLANCO.value,
+    color=Colores.AZUL.value,
     width="full",
-    height=200,
-    expand=1
+    height=300,
+    expand=1,
+    color_texto=Colores.BLANCO.value
 )
 
 teclado_ergonomico = Creador_de_productos(
@@ -118,10 +120,12 @@ camara_deportiva = Creador_de_productos(
 )
 
 productos_varios = [
-    libro_python, arduino_kit,
+    arduino_kit,
     monitor_gaming,
-    teclado_mecanico, teclado_ergonomico,
+    teclado_ergonomico,
     auriculares_inalambricos, headset_gaming,
     raton_gaming, raton_inalambrico,
     camara_web, camara_deportiva
 ]
+
+productos_destacado = [libro_python, teclado_mecanico]
