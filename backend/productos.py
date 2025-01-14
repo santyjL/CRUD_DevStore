@@ -17,10 +17,11 @@ arduino_kit = Creador_de_productos(
     nombre="Kit Arduino Uno",
     imagen="asset/Kit Arduino Uno.jpg",
     descripcion="Incluye una placa Arduino Uno y componentes esenciales.",
-    color=Colores.BLANCO.value,
+    color=Colores.AZUL.value,
     width="full",
-    height=200,
-    expand=1
+    height=300,
+    expand=1,
+    color_texto=Colores.BLANCO.value
 )
 
 # Categoría: Monitores y Laptops
@@ -120,7 +121,7 @@ camara_deportiva = Creador_de_productos(
 )
 
 productos_varios = [
-    arduino_kit,
+
     monitor_gaming,
     teclado_ergonomico,
     auriculares_inalambricos, headset_gaming,
@@ -128,4 +129,4 @@ productos_varios = [
     camara_web, camara_deportiva
 ]
 
-productos_destacado = [libro_python, teclado_mecanico]
+productos_destacado = [libro_python, teclado_mecanico, arduino_kit,]
