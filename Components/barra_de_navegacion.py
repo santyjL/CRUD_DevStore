@@ -53,8 +53,9 @@ def barra_de_navegacion(page: ft.Page):
         controls=[
             item_de_barra("Inicio", "home"),
             item_de_barra("Buscar", "store"),
+            item_de_barra("Carrito", "shopping_cart"),
             categoria,
-            item_de_barra("Acerca de", "info"),
+            item_de_barra("vender", "shopping_bag_rounded"),
         ],
         bgcolor=BGFONDO,
     )
