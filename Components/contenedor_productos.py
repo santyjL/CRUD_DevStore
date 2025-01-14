@@ -1,5 +1,6 @@
 import flet as ft
 
+from Components.imagenes import imagenes
 from styles import Colores, Estilos
 
 
@@ -10,7 +11,7 @@ def contenedor_de_productos(titulo, imagen_src, descripcion,
         content=ft.Column(
             controls=[
                 ft.Text(titulo, size=20, weight=ft.FontWeight.BOLD, color=color_texto),
-                ft.Image(src=imagen_src, width=None, height=height ),
+                imagenes(src=imagen_src, width="full", height=height),
                 ft.Text(descripcion, size=14, color=color_texto)
             ],
             alignment=ft.MainAxisAlignment.CENTER,
