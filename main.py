@@ -35,12 +35,15 @@ def main(page: ft.Page):
         horizontal_alignment=ft.CrossAxisAlignment.CENTER,
     )
 
-    lo_mas_destacado = ft.Row(
-        controls=[
-            crear_grid(productos_destacado, max_extent=700)
+    lo_mas_destacado =ft.Container(
+        ft.Row(
+            controls=[
+                crear_grid(productos_destacado, max_extent=450)
 
-        ],
-        alignment=ft.CrossAxisAlignment.CENTER,
+            ],
+            alignment=ft.CrossAxisAlignment.CENTER,
+        ),
+
     )
 
     otros =ft.Column(
