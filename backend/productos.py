@@ -120,6 +120,17 @@ camara_deportiva = Creador_de_productos(
     expand=1
 )
 
+producto_nuevo = Creador_de_productos(
+    nombre="Super pato de Goma",
+    imagen="asset/Super Pato de Goma.jpg",
+    descripcion="El pato de goma que siempre te salvara.",
+    color=Colores.ROJO.value,
+    width="full",
+    height=600,
+    expand=1,
+    color_texto=Colores.BLANCO.value
+)
+
 productos_varios = [
 
     monitor_gaming,
