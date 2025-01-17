@@ -1,68 +1,24 @@
 import flet as ft
 
-from backend.productos import (producto_nuevo, productos_destacado,
-                               productos_varios)
-from Components.barra_de_navegacion import (barra_comprimida,
-                                            barra_de_navegacion)
-from Components.contenedor_productos import contenedor_de_productos
-from Components.grid import crear_grid
-from styles import Colores, Estilos
+#from routers.enrutamiento import route_change
+from Components.barra_de_navegacion import barra_de_navegacion
+from routers.enrutamiento import route_change
+from routers.routers import Router
 
-(nombre,imagen,descripcion,color,
-width,height,expand,color_texto) = producto_nuevo.elementos_retorno()
 
-# Función principal
 def main(page: ft.Page):
-    # Configuración de la página
-    page.title = "Inicio"
-    page.bgcolor = Colores.BLANCO.value
+    # Configuración inicial de la página
+    page.title = "Aplicación Modular"
     page.scroll = "auto"
 
-    # Barra de navegación
+    # Configuración del NavigationDrawer (barra de navegación)
     barra: ft.NavigationDrawer = barra_de_navegacion(page)
-    page.drawer = barra  # `barra` es el AnimatedSwitcher que contiene el NavigationDrawer
-    page.drawer.open = False  # La barra de navegación estará cerrada por defecto
+    page.drawer = barra
+    page.drawer.open = True  # Cerrado por defecto
 
-    # Sección "Lo más nuevo"
-    lo_mas_nuevo = ft.Column(
-        controls=[
-            contenedor_de_productos(nombre,imagen,descripcion,color,
-                            width,height,expand,color_texto)
-        ],
-        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-    )
+    # Ruta inicial
+    page.on_route_change = route_change
+    page.go(Router.INICIO.value)
 
-    lo_mas_destacado =ft.Container(
-        ft.Row(
-            controls=[
-                crear_grid(productos_destacado, max_extent=450)
-
-            ],
-            alignment=ft.CrossAxisAlignment.CENTER,
-        ),
-
-    )
-
-    otros =ft.Column(
-        controls=[
-            ft.Container(
-                ft.Row(
-                    controls=[
-                        crear_grid(productos_varios, max_extent=300)
-                    ],
-                    alignment=ft.CrossAxisAlignment.CENTER,
-                ),
-                margin= Estilos.Margin.value,
-                bgcolor=Colores.GRIS.value,
-            )
-        ],
-    )
-
-    # Añadir la sección "Lo más nuevo" a la página
-    page.controls.append(barra_comprimida(page.drawer))
-    page.controls.append(lo_mas_nuevo)
-    page.controls.append(lo_mas_destacado)
-    page.controls.append(otros)
-    page.update()
 
 ft.app(target=main)
