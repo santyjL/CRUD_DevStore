@@ -1,4 +1,4 @@
-from backend.crear_productos import Creador_de_productos
+from backend.crear_productos import Creador_de_productos, ajustar_productos
 from styles import Colores
 
 # Categoría: Desarrollo
@@ -131,7 +131,7 @@ producto_nuevo = Creador_de_productos(
     color_texto=Colores.BLANCO.value
 )
 
-productos_varios = [
+productos_varios:list = [
 
     monitor_gaming,
     teclado_ergonomico,
@@ -140,4 +140,8 @@ productos_varios = [
     camara_web, camara_deportiva
 ]
 
-productos_destacado = [libro_python, teclado_mecanico, arduino_kit,]
+
+productos_destacado:list = [libro_python, teclado_mecanico, arduino_kit,]
+productos_totales:list = productos_destacado + productos_varios
+
+todos_los_productos = ajustar_productos(productos_varios[1], productos_totales)
