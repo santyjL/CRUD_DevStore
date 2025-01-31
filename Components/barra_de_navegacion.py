@@ -10,7 +10,6 @@ BGFONDO = Colores.AZUL.value
 
 def item_de_barra(label, icon,page:ft.Page=None, router = "/"):
     def clikeo(e):
-        page.on_route_change = route_change
         page.go(router)
 
         return True
@@ -41,7 +40,7 @@ def barra_de_navegacion(page: ft.Page):
     categoria.label = "Categorias"
     barra_principal = ft.NavigationDrawer(
         controls=[
-            item_de_barra("Inicio", "home", page,Router.BUSQUEDA.value),
+            item_de_barra("Inicio", "home", page,Router.INICIO.value),
             item_de_barra("Buscar", "store",page, Router.BUSQUEDA.value),
             item_de_barra("Carrito", "shopping_cart"),
             categoria,
