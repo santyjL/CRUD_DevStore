@@ -1,6 +1,8 @@
 from backend.crear_productos import Creador_de_productos, ajustar_productos
 from styles import Colores
 
+categorias = ["Desarrollo", "Monitores y Laptops", "Teclados", "Auriculares", "Ratones", "Cámaras"]
+
 # Productos bases
 producto_nuevo = Creador_de_productos(
     nombre="",
@@ -10,7 +12,8 @@ producto_nuevo = Creador_de_productos(
     width="full",
     height=600,
     expand=1,
-    color_texto=Colores.BLANCO.value
+    color_texto=Colores.BLANCO.value,
+    categoria=""
 )
 
 producto_destacado = Creador_de_productos(
@@ -21,7 +24,8 @@ producto_destacado = Creador_de_productos(
     width="full",
     height=300,
     expand=1,
-    color_texto=Colores.BLANCO.value
+    color_texto=Colores.BLANCO.value,
+    categoria=""
 )
 
 producto_normal = Creador_de_productos(
@@ -31,10 +35,23 @@ producto_normal = Creador_de_productos(
     color=Colores.BLANCO.value,
     width="full",
     height=200,
-    expand=1
+    expand=1,
+    categoria=""
 )
 
 # Categoría: Desarrollo
+pato_de_goma = Creador_de_productos(
+    nombre="Super pato de Goma",
+    imagen="asset/Super Pato de Goma.jpg",
+    descripcion="El pato de goma que siempre te salvara.",
+    color=Colores.ROJO.value,
+    width="full",
+    height=600,
+    expand=1,
+    color_texto=Colores.BLANCO.value,
+    categoria=categorias[0]
+)
+
 libro_python = Creador_de_productos(
     nombre="Python Crash Course",
     imagen="asset/Python Crash Course.jpg",
@@ -43,7 +60,8 @@ libro_python = Creador_de_productos(
     width=None,
     height=None,
     expand=None,
-    color_texto=None
+    color_texto=None,
+    categoria=categorias[0]
 )
 
 arduino_kit = Creador_de_productos(
@@ -54,7 +72,8 @@ arduino_kit = Creador_de_productos(
     width=None,
     height=None,
     expand=None,
-    color_texto=None
+    color_texto=None,
+    categoria=categorias[0]
 )
 
 # Categoría: Monitores y Laptops
@@ -66,7 +85,8 @@ monitor_gaming = Creador_de_productos(
     width=None,
     height=None,
     expand=None,
-    color_texto=None
+    color_texto=None,
+    categoria=categorias[1]
 )
 
 # Categoría: Teclados
@@ -78,7 +98,8 @@ teclado_mecanico = Creador_de_productos(
     width=None,
     height=None,
     expand=None,
-    color_texto=None
+    color_texto=None,
+    categoria=categorias[2]
 )
 
 teclado_ergonomico = Creador_de_productos(
@@ -89,7 +110,8 @@ teclado_ergonomico = Creador_de_productos(
     width=None,
     height=None,
     expand=None,
-    color_texto=None
+    color_texto=None,
+    categoria=categorias[2]
 )
 
 # Categoría: Auriculares
@@ -101,7 +123,8 @@ auriculares_inalambricos = Creador_de_productos(
     width=None,
     height=None,
     expand=None,
-    color_texto=None
+    color_texto=None,
+    categoria=categorias[3]
 )
 
 headset_gaming = Creador_de_productos(
@@ -112,7 +135,8 @@ headset_gaming = Creador_de_productos(
     width=None,
     height=None,
     expand=None,
-    color_texto=None
+    color_texto=None,
+    categoria=categorias[3]
 )
 
 # Categoría: Ratones
@@ -124,7 +148,8 @@ raton_gaming = Creador_de_productos(
     width=None,
     height=None,
     expand=None,
-    color_texto=None
+    color_texto=None,
+    categoria=categorias[4]
 )
 
 raton_inalambrico = Creador_de_productos(
@@ -135,7 +160,8 @@ raton_inalambrico = Creador_de_productos(
     width=None,
     height=None,
     expand=None,
-    color_texto=None
+    color_texto=None,
+    categoria=categorias[4]
 )
 
 # Categoría: Cámaras
@@ -147,7 +173,8 @@ camara_web = Creador_de_productos(
     width=None,
     height=None,
     expand=None,
-    color_texto=None
+    color_texto=None,
+    categoria=categorias[5]
 )
 
 camara_deportiva = Creador_de_productos(
@@ -158,19 +185,11 @@ camara_deportiva = Creador_de_productos(
     width=None,
     height=None,
     expand=None,
-    color_texto=None
+    color_texto=None,
+    categoria=categorias[5]
 )
 
-pato_de_goma = Creador_de_productos(
-    nombre="Super pato de Goma",
-    imagen="asset/Super Pato de Goma.jpg",
-    descripcion="El pato de goma que siempre te salvara.",
-    color=Colores.ROJO.value,
-    width="full",
-    height=600,
-    expand=1,
-    color_texto=Colores.BLANCO.value
-)
+
 
 productos_varios_lista: list[Creador_de_productos] = [
     monitor_gaming,
