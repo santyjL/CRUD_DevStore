@@ -1,14 +1,15 @@
 import flet as ft
 
-from backend.productos import (producto_nuevo, productos_destacado,
-                               productos_varios)
+from backend.productos import productos_inicio
 from Components.barra_comprimida import barra_comprimida
 from Components.contenedor_productos import contenedor_de_productos
 from Components.grid import crear_grid
 from styles import Colores, Estilos
 
+Productos_nuevos, productos_destacado,productos_varios = productos_inicio()
+
 (nombre,imagen,descripcion,color,
-width,height,expand,color_texto) = producto_nuevo.elementos_retorno()
+width,height,expand,color_texto) = Productos_nuevos[0].elementos_retorno()
 
 # Función principal
 def inicio_view(page: ft.Page):
@@ -21,7 +22,7 @@ def inicio_view(page: ft.Page):
     lo_mas_nuevo = ft.Column(
         controls=[
             contenedor_de_productos(nombre,imagen,descripcion,color,
-                            width,height,expand,color_texto)
+width,height,expand,color_texto)
         ],
         horizontal_alignment=ft.CrossAxisAlignment.CENTER,
     )

@@ -1,10 +1,12 @@
 import flet as ft
 
-from backend.productos import todos_los_productos
+from backend.productos import productos_buscador
 from Components.barra_comprimida import barra_comprimida
+from Components.buscar import buscar_producto
 from Components.grid import crear_grid
 from styles import Colores, Estilos
 
+todos_los_productos = productos_buscador()
 
 def buscador_view(page: ft.Page):
     page.title = "Buscador"
@@ -16,7 +18,7 @@ def buscador_view(page: ft.Page):
             ft.Container(
                 ft.Row(
                     controls=[
-                        crear_grid(todos_los_productos, max_extent=350)
+                        crear_grid(buscar_producto(""), max_extent=350)
                     ],
                     alignment=ft.CrossAxisAlignment.CENTER,
                 ),
