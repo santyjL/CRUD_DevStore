@@ -20,5 +20,4 @@ def main(page: ft.Page):
     page.on_route_change = route_change
     page.go(Router.INICIO.value)
 
-
 ft.app(target=main)

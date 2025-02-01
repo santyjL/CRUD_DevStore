@@ -12,5 +12,6 @@ class Colores (Enum):
 
 class Estilos (Enum):
     Margin = 10
+    PADDING = 10
     BORDER_RADIUS_1 = ft.border_radius.all(75)
     BORDER_RADIUS_2 = ft.border_radius.only(75 , 75 , 50 , 150)
