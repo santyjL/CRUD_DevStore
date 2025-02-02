@@ -1,23 +1,24 @@
 import flet as ft
 
 from backend.crear_productos import Creador_de_productos
-from backend.productos import productos_buscador
+from backend.productos import categorias, productos_buscador
+from Components.barra_de_navegacion import barra_de_navegacion
 from Components.grid import crear_grid
 from styles import Colores, Estilos
 
 
-def buscar_producto(busqueda: str = "") -> list[Creador_de_productos]:
+def buscar_producto(busqueda: str = "", categoria: str = None) -> list[Creador_de_productos]:
     """
     Función que busca un producto en la lista de productos_totales.
     """
     productos_totales: list[Creador_de_productos] = productos_buscador()
 
     productos_encontrados: list[Creador_de_productos] = []
-    if busqueda == "":
+    if busqueda == "" and categoria is None:
         return productos_totales
 
     for producto in productos_totales:
-        if busqueda.lower() in producto.nombre.lower() or busqueda.lower() in producto.descripcion.lower():
+        if (busqueda.lower() in producto.nombre.lower() or busqueda.lower() in producto.descripcion.lower()) and (categoria is None or producto.categoria == categoria):
             productos_encontrados.append(producto)
 
     return productos_encontrados
@@ -27,7 +28,7 @@ def buscar_input(page: ft.Page, resultados: ft.Column):
     Función que crea una barra de búsqueda y actualiza los resultados en la página.
     """
     def buscar(e):
-        productos = buscar_producto(buscador.value)
+        productos = buscar_producto(buscador.value, page.client_storage.get("categoria_seleccionada"))
         resultados.controls.clear()
         resultados.controls.append(
             ft.Column(
