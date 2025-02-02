@@ -32,7 +32,7 @@ class modificador_de_productos:
         todos_los_productos: list = []
 
         (nombre, imagen, descripcion, color,
-         width, height, expand, color_texto) = self.producto_base.elementos_retorno()
+         width, height, expand, color_texto, categoria) = self.producto_base.elementos_retorno()
 
         for producto in lista_de_productos:
             if isinstance(producto, Creador_de_productos):
@@ -44,7 +44,8 @@ class modificador_de_productos:
                     width=width,
                     height=height,
                     expand=expand,
-                    color_texto=color_texto
+                    color_texto=color_texto,
+                    categoria=producto.categoria
                 )
                 todos_los_productos.append(nuevo_producto)
             else:
