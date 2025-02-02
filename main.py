@@ -14,7 +14,7 @@ def main(page: ft.Page):
     # Configuración del NavigationDrawer (barra de navegación)
     barra: ft.NavigationDrawer = barra_de_navegacion(page)
     page.drawer = barra
-    page.drawer.open = True  # Cerrado por defecto
+    page.drawer.open = False  # Cerrado por defecto
 
     # Ruta inicial
     page.on_route_change = route_change
