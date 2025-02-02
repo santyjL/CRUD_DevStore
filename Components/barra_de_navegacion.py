@@ -34,12 +34,14 @@ def barra_de_navegacion(page: ft.Page):
             ft.dropdown.Option("Teclados"),
             ft.dropdown.Option("Ratones"),
             ft.dropdown.Option("Auriculares"),
+            ft.dropdown.Option("Todo"),
         ],
         bgcolor=BGFONDO,
         on_change=on_categoria_change
     )
 
     categoria.label = "Categorias"
+    categoria.value = "Todo"
     barra_principal = ft.NavigationDrawer(
         controls=[
             item_de_barra("Inicio", "home", page, Router.INICIO.value),
