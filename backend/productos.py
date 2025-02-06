@@ -13,7 +13,10 @@ producto_nuevo = Creador_de_productos(
     height=600,
     expand=1,
     color_texto=Colores.BLANCO.value,
-    categoria=""
+    categoria="",
+    marca="",
+    precio=0.99,
+    id=None
 )
 
 producto_destacado = Creador_de_productos(
@@ -25,7 +28,10 @@ producto_destacado = Creador_de_productos(
     height=300,
     expand=1,
     color_texto=Colores.BLANCO.value,
-    categoria=""
+    categoria="",
+    marca="",
+    precio=0.99,
+    id=None
 )
 
 producto_normal = Creador_de_productos(
@@ -36,7 +42,10 @@ producto_normal = Creador_de_productos(
     width="full",
     height=200,
     expand=1,
-    categoria=""
+    categoria="",
+    marca="",
+    precio=0.99,
+    id=None
 )
 
 # Categoría: Desarrollo
@@ -49,7 +58,10 @@ pato_de_goma = Creador_de_productos(
     height=600,
     expand=1,
     color_texto=Colores.BLANCO.value,
-    categoria=categorias[0]
+    categoria=categorias[0],
+    marca="",
+    precio=7.37,
+    id=1
 )
 
 libro_python = Creador_de_productos(
@@ -61,7 +73,10 @@ libro_python = Creador_de_productos(
     height=None,
     expand=None,
     color_texto=None,
-    categoria=categorias[0]
+    categoria=categorias[0],
+    marca="",
+    precio=7.37,
+    id=2
 )
 
 arduino_kit = Creador_de_productos(
@@ -73,7 +88,10 @@ arduino_kit = Creador_de_productos(
     height=None,
     expand=None,
     color_texto=None,
-    categoria=categorias[0]
+    categoria=categorias[0],
+    marca="",
+    precio=7.37,
+    id=3
 )
 
 # Categoría: Monitores y Laptops
@@ -86,7 +104,10 @@ monitor_gaming = Creador_de_productos(
     height=None,
     expand=None,
     color_texto=None,
-    categoria=categorias[1]
+    categoria=categorias[1],
+    marca="",
+    precio=7.37,
+    id=4
 )
 
 # Categoría: Teclados
@@ -99,7 +120,10 @@ teclado_mecanico = Creador_de_productos(
     height=None,
     expand=None,
     color_texto=None,
-    categoria=categorias[2]
+    categoria=categorias[2],
+    marca="",
+    precio=7.37,
+    id=5
 )
 
 teclado_ergonomico = Creador_de_productos(
@@ -111,7 +135,10 @@ teclado_ergonomico = Creador_de_productos(
     height=None,
     expand=None,
     color_texto=None,
-    categoria=categorias[2]
+    categoria=categorias[2],
+    marca="",
+    precio=7.37,
+    id=6
 )
 
 # Categoría: Auriculares
@@ -124,7 +151,10 @@ auriculares_inalambricos = Creador_de_productos(
     height=None,
     expand=None,
     color_texto=None,
-    categoria=categorias[3]
+    categoria=categorias[3],
+    marca="",
+    precio=7.37,
+    id=7
 )
 
 headset_gaming = Creador_de_productos(
@@ -136,7 +166,10 @@ headset_gaming = Creador_de_productos(
     height=None,
     expand=None,
     color_texto=None,
-    categoria=categorias[3]
+    categoria=categorias[3],
+    marca="",
+    precio=7.37,
+    id=8
 )
 
 # Categoría: Ratones
@@ -149,7 +182,10 @@ raton_gaming = Creador_de_productos(
     height=None,
     expand=None,
     color_texto=None,
-    categoria=categorias[4]
+    categoria=categorias[4],
+    marca="",
+    precio=7.37,
+    id=9
 )
 
 raton_inalambrico = Creador_de_productos(
@@ -161,7 +197,10 @@ raton_inalambrico = Creador_de_productos(
     height=None,
     expand=None,
     color_texto=None,
-    categoria=categorias[4]
+    categoria=categorias[4],
+    marca="",
+    precio=7.37,
+    id=10
 )
 
 # Categoría: Cámaras
@@ -174,7 +213,10 @@ camara_web = Creador_de_productos(
     height=None,
     expand=None,
     color_texto=None,
-    categoria=categorias[5]
+    categoria=categorias[5],
+    marca="",
+    precio=7.37,
+    id=11
 )
 
 camara_deportiva = Creador_de_productos(
@@ -186,7 +228,10 @@ camara_deportiva = Creador_de_productos(
     height=None,
     expand=None,
     color_texto=None,
-    categoria=categorias[5]
+    categoria=categorias[5],
+    marca="",
+    precio=7.37,
+    id=12
 )
 
 

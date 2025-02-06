@@ -15,14 +15,25 @@ class Creador_de_productos:
     width: str
     height: int
     expand: int
-    color_texto: str = Colores.NEGRO.value
-    categoria: str = None
+    color_texto:str= Colores.NEGRO.value
+    categoria:str= None
+    marca:str= None
+    precio:float= 0.99
+    id:int= None
 
     def elementos_retorno(self):
-        return (self.nombre, self.imagen,
-                self.descripcion, self.color,
-                self.width, self.height, self.expand,
-                self.color_texto, self.categoria)
+        return (self.nombre,
+                self.imagen,
+                self.descripcion,
+                self.color,
+                self.width,
+                self.height,
+                self.expand,
+                self.color_texto,
+                self.categoria,
+                self.marca,
+                self.precio,
+                self.id)
 
 @dataclass
 class modificador_de_productos:
@@ -32,7 +43,8 @@ class modificador_de_productos:
         todos_los_productos: list = []
 
         (nombre, imagen, descripcion, color,
-         width, height, expand, color_texto, categoria) = self.producto_base.elementos_retorno()
+         width, height, expand, color_texto, categoria,
+         marca, precio, id) = self.producto_base.elementos_retorno()
 
         for producto in lista_de_productos:
             if isinstance(producto, Creador_de_productos):
@@ -45,7 +57,10 @@ class modificador_de_productos:
                     height=height,
                     expand=expand,
                     color_texto=color_texto,
-                    categoria=producto.categoria
+                    categoria=producto.categoria,
+                    marca=producto.marca,
+                    precio=producto.precio,
+                    id=producto.id
                 )
                 todos_los_productos.append(nuevo_producto)
             else:
