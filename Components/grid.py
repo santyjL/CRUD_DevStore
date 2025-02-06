@@ -17,7 +17,7 @@ def crear_grid(contenedores : list[Creador_de_productos], max_extent) -> ft.Grid
     for contenedor in contenedores:  # Crear tantos elementos como se especifique
         (nombre, imagen, descripcion,
          color, width, height, expand,
-         color_texto,categoria) = contenedor.elementos_retorno()
+         color_texto,categoria,marca,precio,id) = contenedor.elementos_retorno()
 
         elemento = contenedor_de_productos(
                 nombre,                 # Nombre dinámico del producto
