@@ -5,7 +5,7 @@ from Components.contenedor_productos import contenedor_de_productos
 from styles import Estilos
 
 
-def crear_grid(contenedores : list[Creador_de_productos], max_extent) -> ft.GridView:
+def crear_grid(contenedores : list[Creador_de_productos], max_extent, page) -> ft.GridView:
     """
     Crear un GridView dinámico que muestra una cantidad específica de elementos.
     :param contenedores: Lista de contenedores de productos
@@ -28,7 +28,8 @@ def crear_grid(contenedores : list[Creador_de_productos], max_extent) -> ft.Grid
                 height,
                 expand,                  # Altura del producto
                 color_texto,
-                categoria
+                categoria,
+                page= page
             )
 
         productos.append(elemento)
