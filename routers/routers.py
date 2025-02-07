@@ -5,3 +5,4 @@ class Router(Enum):
     INICIO = "/"
     BUSQUEDA = "/Busqueda"
     CARRITO = "/Carrito"
+    PRODUCTO = "/producto"
