@@ -32,7 +32,7 @@ def inicio_view(page: ft.Page):
     lo_mas_nuevo = ft.Column(
         controls=[
             contenedor_de_productos(nombre,imagen,descripcion,color,
-width,height,expand,color_texto,categoria)
+width,height,expand,color_texto,categoria,page=page)
         ],
         horizontal_alignment=ft.CrossAxisAlignment.CENTER,
     )
@@ -40,7 +40,7 @@ width,height,expand,color_texto,categoria)
     lo_mas_destacado =ft.Container(
         ft.Row(
             controls=[
-                crear_grid(productos_destacado, max_extent=450)
+                crear_grid(productos_destacado, max_extent=450,page=page)
 
             ],
             alignment=ft.CrossAxisAlignment.CENTER,
@@ -53,7 +53,7 @@ width,height,expand,color_texto,categoria)
             ft.Container(
                 ft.Row(
                     controls=[
-                        crear_grid(productos_varios, max_extent=300)
+                        crear_grid(productos_varios, max_extent=300, page=page)
                     ],
                     alignment=ft.CrossAxisAlignment.CENTER,
                 ),

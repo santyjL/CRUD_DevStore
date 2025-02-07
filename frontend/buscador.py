@@ -23,7 +23,7 @@ def buscador_view(page: ft.Page):
                 ft.Container(
                     ft.Row(
                         controls=[
-                            crear_grid(productos, max_extent=350)
+                            crear_grid(productos, max_extent=350, page=page)
                         ],
                         alignment=ft.CrossAxisAlignment.CENTER,
                     ),
