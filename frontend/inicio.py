@@ -8,18 +8,9 @@ from styles import Colores, Estilos
 
 Productos_nuevos, productos_destacado,productos_varios = productos_inicio()
 
-(nombre,
- imagen,
- descripcion,
- color,
-width,
-height,
-expand,
-color_texto,
-categoria,
-marca,
-precio,
-id) = Productos_nuevos[0].elementos_retorno()
+(nombre,imagen,descripcion,
+ color,width,height,expand,color_texto,
+ categoria,marca,precio,id) = Productos_nuevos[0].elementos_retorno()
 
 # Función principal
 def inicio_view(page: ft.Page):
