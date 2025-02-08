@@ -8,9 +8,9 @@ from styles import Colores, Estilos
 def contenedor_de_productos(titulo, imagen_src, descripcion,
                             bgcolor, width="auto", height=400,
                             expand = False, color_texto =Colores.BLANCO.value,categoria=None,
-                            page=ft.Page):
+                            page=ft.Page, id=0):
     def abrir_producto(e):
-        page.go(route=Router.PRODUCTO.value)
+        page.go(route=Router.PRODUCTO.value + f" {id}")
 
     return ft.Container(
         content=ft.Column(

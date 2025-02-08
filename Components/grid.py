@@ -29,7 +29,8 @@ def crear_grid(contenedores : list[Creador_de_productos], max_extent, page) -> f
                 expand,                  # Altura del producto
                 color_texto,
                 categoria,
-                page= page
+                page= page,
+                id = id
             )
 
         productos.append(elemento)
