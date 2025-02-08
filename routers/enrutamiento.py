@@ -11,6 +11,6 @@ def route_change(e):
         inicio_view(page)  # Carga la vista de inicio
     elif page.route == Router.BUSQUEDA.value:
         buscador_view(page)  # Carga la vista del buscador
-    elif page.route == Router.PRODUCTO.value:
+    elif Router.PRODUCTO.value in page.route:
         productos_view(page)
     page.update()  # Actualiza la pantalla
