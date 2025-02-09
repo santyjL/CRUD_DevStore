@@ -23,7 +23,7 @@ def inicio_view(page: ft.Page):
     lo_mas_nuevo = ft.Column(
         controls=[
             contenedor_de_productos(nombre,imagen,descripcion,color,
-width,height,expand,color_texto,categoria,page=page)
+            width,height,expand,color_texto,categoria,page=page, id=id)
         ],
         horizontal_alignment=ft.CrossAxisAlignment.CENTER,
     )

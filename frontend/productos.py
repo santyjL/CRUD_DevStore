@@ -2,7 +2,7 @@ import flet as ft
 
 from backend.productos import productos_totales
 from Components.barra_comprimida import barra_comprimida
-from styles import Colores, Estilos
+from styles import Colores
 
 
 def productos_view(page: ft.Page):
@@ -27,19 +27,22 @@ def productos_view(page: ft.Page):
                     controls=[
                         ft.Column(
                             controls=[
-                                ft.Image(src=imagen, width="full", height=500,expand=1)
-                            ]
+                                ft.Image(src=imagen, width=600,expand=1)
+                            ],
+
                         ),
                         ft.Column(
                             controls=[
-                                ft.Text(nombre, size=20, weight=ft.FontWeight.BOLD, color=color_texto),
-                                ft.Text(descripcion, size=14, color=color_texto),
-                                ft.Text(f"Marca: {marca}", size=14, color=color_texto),
-                                ft.Text(f"Categoría: {categoria}", size=14, color=color_texto),
-                                ft.Text(f"Precio: {precio}", size=14, color=color_texto),
-                            ]
-                        )
-                    ]
+                                ft.Text(nombre, size=30, weight=ft.FontWeight.BOLD, color=Colores.NEGRO.value),
+                                ft.Text(descripcion, size=24, color=Colores.GRIS.value),
+                                ft.Text(f"Marca: {marca}", size=20, color=Colores.ROJO.value , width=400),
+                                ft.Text(f"Categoría: {categoria}", size=20, color=Colores.ROJO.value),
+                                ft.Text(f"Precio: {precio}", size=20, color=Colores.ROJO.value),
+                            ],
+                            width= 400
+                        ),
+                    ],
+                    spacing=50
                 )
             )
 
