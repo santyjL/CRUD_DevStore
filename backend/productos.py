@@ -59,7 +59,7 @@ pato_de_goma = Creador_de_productos(
     expand=1,
     color_texto=Colores.BLANCO.value,
     categoria=categorias[0],
-    marca="",
+    marca="Devs pracmaticos",
     precio=7.37,
     id=1
 )
@@ -74,7 +74,7 @@ libro_python = Creador_de_productos(
     expand=None,
     color_texto=None,
     categoria=categorias[0],
-    marca="",
+    marca="Eric Matthes",
     precio=7.37,
     id=2
 )
@@ -89,7 +89,7 @@ arduino_kit = Creador_de_productos(
     expand=None,
     color_texto=None,
     categoria=categorias[0],
-    marca="",
+    marca="Arduino inc",
     precio=7.37,
     id=3
 )
@@ -105,7 +105,7 @@ monitor_gaming = Creador_de_productos(
     expand=None,
     color_texto=None,
     categoria=categorias[1],
-    marca="",
+    marca="Asus",
     precio=7.37,
     id=4
 )
@@ -121,7 +121,7 @@ teclado_mecanico = Creador_de_productos(
     expand=None,
     color_texto=None,
     categoria=categorias[2],
-    marca="",
+    marca="Logitech",
     precio=7.37,
     id=5
 )
@@ -136,7 +136,7 @@ teclado_ergonomico = Creador_de_productos(
     expand=None,
     color_texto=None,
     categoria=categorias[2],
-    marca="",
+    marca="Microfoft",
     precio=7.37,
     id=6
 )
@@ -152,7 +152,7 @@ auriculares_inalambricos = Creador_de_productos(
     expand=None,
     color_texto=None,
     categoria=categorias[3],
-    marca="",
+    marca="Sony",
     precio=7.37,
     id=7
 )
@@ -167,7 +167,7 @@ headset_gaming = Creador_de_productos(
     expand=None,
     color_texto=None,
     categoria=categorias[3],
-    marca="",
+    marca="HyperX",
     precio=7.37,
     id=8
 )
@@ -183,7 +183,7 @@ raton_gaming = Creador_de_productos(
     expand=None,
     color_texto=None,
     categoria=categorias[4],
-    marca="",
+    marca="Razer",
     precio=7.37,
     id=9
 )
@@ -198,7 +198,7 @@ raton_inalambrico = Creador_de_productos(
     expand=None,
     color_texto=None,
     categoria=categorias[4],
-    marca="",
+    marca="Logitech",
     precio=7.37,
     id=10
 )
@@ -214,7 +214,7 @@ camara_web = Creador_de_productos(
     expand=None,
     color_texto=None,
     categoria=categorias[5],
-    marca="",
+    marca="Logitech",
     precio=7.37,
     id=11
 )
@@ -229,7 +229,7 @@ camara_deportiva = Creador_de_productos(
     expand=None,
     color_texto=None,
     categoria=categorias[5],
-    marca="",
+    marca="GOPro",
     precio=7.37,
     id=12
 )
