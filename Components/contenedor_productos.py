@@ -30,33 +30,3 @@ def contenedor_de_productos(titulo, imagen_src, descripcion, bgcolor, width="aut
         border_radius=ft.border_radius.all(10),
         on_click=abrir_producto
     )
-
-def contenedor_carrito(titulo, imagen_src, descripcion, bgcolor, width="auto", height=200, expand=False, color_texto=Colores.BLANCO.value, categoria=None, page=None, id=0):
-    def abrir_producto(e):
-        page.go(route=Router.PRODUCTO.value + f" {id}")
-
-    return ft.Container(
-        content=ft.Row(
-            controls=[
-                imagenes(src=imagen_src, width=150, height=150),  # Ajusta el tamaño de la imagen
-                ft.Column(
-                    controls=[
-                        ft.Text(titulo, size=20, weight=ft.FontWeight.BOLD, color=color_texto),
-                        ft.Text(descripcion, size=14, color=color_texto),
-                        ft.Text(categoria, size=18, italic=True, color=color_texto, bgcolor=Colores.GRIS.value)
-                    ],
-                    alignment=ft.MainAxisAlignment.CENTER,
-                    horizontal_alignment=ft.CrossAxisAlignment.START
-                )
-            ],
-            spacing=20
-            ),
-        bgcolor=bgcolor,
-        width=width,
-        height=height,
-        alignment=ft.alignment.center,
-        margin=Estilos.Margin.value,
-        expand=expand,
-        border_radius=ft.border_radius.all(10),
-        on_click=abrir_producto
-    )

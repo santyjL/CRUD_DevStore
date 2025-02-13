@@ -20,7 +20,7 @@ def carrito_view(page: ft.Page):
             controls=[
                 ft.Row(
                     controls=[
-                        crear_grid(productos_carro, max_extent=450, page=page, contenedor_view=2)
+                        crear_grid(productos_carro, max_extent=450, page=page)
                     ],
                 ),
             ],
