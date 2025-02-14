@@ -48,7 +48,7 @@ def barra_de_navegacion(page: ft.Page):
             item_de_barra("Buscar", "store", page, Router.BUSQUEDA.value),
             item_de_barra("Carrito", "shopping_cart", page, Router.CARRITO.value),
             categoria,
-            item_de_barra("Vender", "shopping_bag_rounded"),
+            item_de_barra("Vender", "shopping_bag_rounded",page, Router.VENDER.value),
         ],
         bgcolor=BGFONDO,
     )
