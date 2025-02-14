@@ -39,8 +39,7 @@ def productos_view(page: ft.Page):
                                 ft.Text(f"Marca: {marca}", size=20, color=Colores.ROJO.value , width=400),
                                 ft.Text(f"Categoría: {categoria}", size=20, color=Colores.ROJO.value),
                                 ft.Text(f"Precio: {precio}", size=20, color=Colores.ROJO.value),
-                                ft.Button("Añadir a carrito", bgcolor=Colores.AZUL.value,
-                                          on_click=agregar_producto_carrito(id,page))
+                                ft.Button("Añadir a carrito", bgcolor=Colores.AZUL.value,on_click=agregar_producto_carrito(id,page))
                             ],
                             width= 400
                         ),

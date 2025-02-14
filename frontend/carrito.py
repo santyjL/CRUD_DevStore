@@ -26,5 +26,40 @@ def carrito_view(page: ft.Page):
             ],
         )
     )
+
+    if productos_carro:
+        barra_acciones = ft.Row(
+            controls=[
+                ft.Button(text="Comprar", on_click=lambda e: comprar_productos_carrito(page)),
+                ft.Button(text="Eliminar", on_click=lambda e: eliminar_producto_carrito(page))
+            ],
+            alignment=ft.MainAxisAlignment.END,
+            spacing=10,
+        )
+        page.controls.append(barra_acciones)
+
+    else:
+        barra_acciones = ft.Row(
+            controls=[
+                ft.Text(value="No hay nada en el carrito de compreas",size=28),
+            ],
+            alignment=ft.MainAxisAlignment.CENTER,
+            spacing=10,
+        )
+        page.controls.append(barra_acciones)
+
     page.controls.append(columna_productos)
     page.update()
+
+def eliminar_producto_carrito(page: ft.Page):
+    # Lógica para eliminar productos del carrito
+    productos_carrito.clear()
+    page.controls.clear()
+    carrito_view(page)
+
+def comprar_productos_carrito(page: ft.Page):
+    # Lógica para comprar productos del carrito
+    # Aquí puedes añadir la lógica para procesar la compra
+    productos_carrito.clear()
+    page.controls.clear()
+    carrito_view(page)
