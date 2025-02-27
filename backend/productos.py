@@ -1,7 +1,7 @@
 from backend.crear_productos import Creador_de_productos, ajustar_productos
 from styles import Colores
 
-categorias = ["Desarrollo", "Monitores y Laptops", "Teclados", "Auriculares", "Ratones", "Cámaras"]
+categorias = ["Desarrollo", "Monitores y Laptops", "Teclados", "Auriculares", "Ratones", "Cámaras", "otros"]
 
 # Productos bases
 producto_nuevo = Creador_de_productos(
