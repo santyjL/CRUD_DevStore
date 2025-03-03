@@ -14,7 +14,10 @@ def vender_view(page: ft.Page):
     # Botón para abrir el modal de agregar producto
     btn_agregar = ft.ElevatedButton(
         "Agregar Producto",
-        on_click=lambda e: abrir_modal_agregar_producto(page)
+        on_click=lambda e: abrir_modal_agregar_producto(page),
+        width=200,
+        height=50,
+        bgcolor=Colores.ROJO.value,
     )
 
     page.controls.append(barra_comprimida(page.drawer))
@@ -24,7 +27,8 @@ def vender_view(page: ft.Page):
             controls=[
                 btn_agregar,
                 ft.Container(
-                    content=ft.Text("Formulario de venta de productos", size=18),
+                    content=ft.Text("Si tiene alguún producto que quiera vender puede añadirlo solamente completando el formulario",
+                                    size=18),
                     alignment=ft.alignment.center,
                     padding=20
                 )
