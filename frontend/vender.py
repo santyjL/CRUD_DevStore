@@ -27,7 +27,7 @@ def vender_view(page: ft.Page):
             controls=[
                 btn_agregar,
                 ft.Container(
-                    content=ft.Text("Si tiene alguún producto que quiera vender puede añadirlo solamente completando el formulario",
+                    content=ft.Text("Si tiene algún producto que quiera vender puede añadirlo solamente completando el formulario",
                                     size=18),
                     alignment=ft.alignment.center,
                     padding=20

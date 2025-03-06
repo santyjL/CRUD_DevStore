@@ -19,16 +19,16 @@ def productos_view(page: ft.Page):
     for i in range(len(productos_totales)):
 
         if productos_totales[i].id == id:
-            (nombre,imagen,descripcion,
-            color,width,height,expand,color_texto,
-            categoria,marca,precio,id) = productos_totales[i].elementos_retorno()
+            (nombre, imagen, descripcion,
+             color, width, height, expand, color_texto,
+             categoria, marca, precio, id) = productos_totales[i].elementos_retorno()
 
             page.controls.append(
                 ft.Row(
                     controls=[
                         ft.Column(
                             controls=[
-                                ft.Image(src=imagen, width=600,expand=1)
+                                ft.Image(src=imagen, width=600, expand=1)
                             ],
 
                         ),
@@ -36,12 +36,12 @@ def productos_view(page: ft.Page):
                             controls=[
                                 ft.Text(nombre, size=30, weight=ft.FontWeight.BOLD, color=Colores.NEGRO.value),
                                 ft.Text(descripcion, size=24, color=Colores.GRIS.value),
-                                ft.Text(f"Marca: {marca}", size=20, color=Colores.ROJO.value , width=400),
+                                ft.Text(f"Marca: {marca}", size=20, color=Colores.ROJO.value, width=400),
                                 ft.Text(f"Categoría: {categoria}", size=20, color=Colores.ROJO.value),
                                 ft.Text(f"Precio: {precio}", size=20, color=Colores.ROJO.value),
-                                ft.Button("Añadir a carrito", bgcolor=Colores.AZUL.value,on_click=agregar_producto_carrito(id,page))
+                                ft.Button("Añadir a carrito", bgcolor=Colores.AZUL.value, on_click=lambda e: agregar_producto_carrito(id, page))
                             ],
-                            width= 400
+                            width=400
                         ),
                     ],
                     spacing=50

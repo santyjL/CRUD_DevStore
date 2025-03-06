@@ -52,14 +52,14 @@ producto_normal = Creador_de_productos(
 pato_de_goma = Creador_de_productos(
     nombre="Super pato de Goma",
     imagen="asset/Super Pato de Goma.jpg",
-    descripcion="El pato de goma que siempre te salvara.",
+    descripcion="El pato de goma que siempre te salvará.",
     color=Colores.ROJO.value,
     width="full",
     height=600,
     expand=1,
     color_texto=Colores.BLANCO.value,
     categoria=categorias[0],
-    marca="Devs pracmaticos",
+    marca="Devs pragmáticos",
     precio=7.37,
     id=1
 )
@@ -89,7 +89,7 @@ arduino_kit = Creador_de_productos(
     expand=None,
     color_texto=None,
     categoria=categorias[0],
-    marca="Arduino inc",
+    marca="Arduino Inc.",
     precio=7.37,
     id=3
 )
@@ -136,7 +136,7 @@ teclado_ergonomico = Creador_de_productos(
     expand=None,
     color_texto=None,
     categoria=categorias[2],
-    marca="Microfoft",
+    marca="Microsoft",
     precio=7.37,
     id=6
 )
@@ -229,12 +229,10 @@ camara_deportiva = Creador_de_productos(
     expand=None,
     color_texto=None,
     categoria=categorias[5],
-    marca="GOPro",
+    marca="GoPro",
     precio=7.37,
     id=12
 )
-
-
 
 productos_varios_lista: list[Creador_de_productos] = [
     monitor_gaming,
@@ -255,6 +253,5 @@ def productos_inicio():
     productos_varios = ajustar_productos(producto_normal, productos_varios_lista)
     productos_destacado = ajustar_productos(producto_destacado, productos_destacado_lista)
     Productos_nuevos = ajustar_productos(producto_nuevo, [pato_de_goma])
-
     return Productos_nuevos, productos_destacado, productos_varios
 
