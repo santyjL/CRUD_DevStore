@@ -21,4 +21,4 @@ pero a lo largo del tiempo de desarrollo he terminado
 usando las bases necesarias para una aplicación completa
 que es CRUD
 
-## Imagenes
+Ejecutable: [Dev-store](dist/main.exe) (click derecho y guardar como)
